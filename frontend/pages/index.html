@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+
+{% load static %}
+
+<article class="container">
+
+    <!--HERO-->
+
+    <section class="hero" id="hero">
+
+        <div class="hero-content">
+
+            <img src="{{ bottom.back_image_1.file.url }}" alt="Podcast" class="hero-title">
+
+            <p class="hero-text">
+                {{ bottom.caption }}
+            </p>
+
+            <div class="hero-btn-group">
+
+                <form action="{% url 'categories_page' %}">
+                    <button class="btn btn-primary">
+                        <ion-icon name="headset"></ion-icon>
+
+                        <span>К интервью!</span>
+                    </button>
+                </form>
+
+
+            </div>
+
+        </div>
+
+        <div class="hero-banner"></div>
+
+    </section>
+
+
+    <!--Block-Cast-->
+
+    <section class="podcast" id="podcast">
+        <ul class="podcast-list">
+
+            {% for post in posts %}
+            <li>
+                <a href="{% url 'article_page' post.id %}" class="podcast-card">
+
+                    <figure class="card-banner">
+                        <img src="{{ bottom.back_image_2.file.url }}">
+
+                        <div class="card-banner-icon">
+                            <ion-icon name="play"></ion-icon>
+                        </div>
+                    </figure>
+
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <time datetime="2024-05-10">{{ post.interview_date }}</time>
+
+                            <p class="pod-epi">{{ post.headline }}</p>
+                        </div>
+
+                        <h3 class="h3 card-title">{{ post.text | truncatewords:15 }}</h3>
+                    </div>
+
+                </a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </section>
+
+</article>
+
+{% endblock main %}

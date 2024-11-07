@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/blog_post.css'%}">
+
+<section class="singlepost">
+    <div class="container singlepost__container">
+        <h2>{{ article.headline }}</h2>
+        <div class="post__author">
+            <div class="post__author-avatar">
+                <img src="{{ article.author_icon.file.url }}">
+            </div>
+            <div class="post__author-info">
+                <h5>{{ article.author }}</h5>
+                <small>{{ article.interview_date }}</small>
+            </div>
+        </div>
+
+
+        <div class="singlepost__thumbnail">
+            <img src="{{ article.picture.file.url }}">
+        </div>
+        <div class="audio-controls">
+            <button id="playBtn">
+                <ion-icon name="play-circle-outline"></ion-icon>
+            </button>
+            <button id="pauseBtn">
+                <ion-icon name="pause-circle-outline"></ion-icon>
+            </button>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="time">
+                <span class="current-time">0:00</span> / <span class="total-time">0:00</span>
+            </div>
+        </div>
+        {{ article.text }}
+        </div>
+</section>
+
+<div class="comment-section">
+    <h2>Comments</h2>
+
+    <div class="comment">
+        <div class="avatar">
+
+            <img src="./assets/images/mainicon.jpg" alt="User Avatar">
+        </div>
+        <div class="comment-text">
+            <strong>John Doe</strong>
+            <p>This is a great article! Thanks for sharing.</p>
+            <div class="like-dislike">
+                <span>👍 10</span>
+                <span>👎 2</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="comment">
+        <div class="avatar">
+
+            <img src="./assets/images/mainicon.jpg" alt="User Avatar">
+        </div>
+        <div class="comment-text">
+            <strong>Jane Smith</strong>
+            <p>I found this information very useful.</p>
+            <div class="like-dislike">
+                <span>👍 5</span>
+                <span>👎 0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="comment">
+        <div class="avatar">
+
+            <img src="./assets/images/mainicon.jpg" alt="User Avatar">
+        </div>
+        <div class="comment-text">
+            <strong>Tom Brown</strong>
+            <p>Could you elaborate more on the topic?</p>
+            <div class="like-dislike">
+                <span>👍 3</span>
+                <span>👎 1</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="comment">
+        <div class="avatar">
+
+            <img src="./assets/images/mainicon.jpg" alt="User Avatar">
+        </div>
+        <div class="comment-text">
+            <strong>Lucy Green</strong>
+            <p>Not really what I was looking for.</p>
+            <div class="like-dislike">
+                <span>👍 1</span>
+                <span>👎 4</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-comment">
+        <h3>Add a Comment</h3>
+        <textarea placeholder="Your comment" id="comment"></textarea>
+        <button type="submit">add</button>
+    </div>
+</div>
+
+{% endblock main %}
+
+

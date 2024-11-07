@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/aboutus.css'%}">
+
+<div class="container_2">
+    <div class="left-side">
+        <img src="{{ about_us.picture.file.url }}" alt="Image" class="about-image">
+    </div>
+    <div class="right-side">
+        <h1>{{ about_us.headline }}</h1>
+        <p>{{ about_us.text }}</p>
+        <form action="{{ about_us.link }}"><button class="big-button">Наш канал</button></form>
+
+    </div>
+</div>
+
+<div class="contact-blocks">
+    {% for contact in contact_about_us %}
+    <div class="contact-item">
+        <span class="icon">{{ contact.emoji }}</span>
+        <span>{{ contact.headline }}</span>
+        <div class="numbers">
+            <p>{{ contact.link }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock main %}

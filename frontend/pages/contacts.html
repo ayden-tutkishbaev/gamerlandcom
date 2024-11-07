@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/contact.css'%}"/>
+
+<div class="container_2">
+    <div class="form">
+        <div class="contact-info">
+            <h3 class="title_master">Find us with these things:</h3>
+            <p class="text_master">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                dolorum adipisci recusandae praesentium dicta!
+            </p>
+
+            <div class="info">
+                <div class="information">
+                    <img src="{% static 'images/icons_contact/point_map.png'%}" class="icon" alt=""/>
+                    <p>Tasheknt aus dem gewitter</p>
+                </div>
+                <div class="information">
+                    <img src="{% static 'images/icons_contact/email.png'%}" class="icon" alt=""/>
+                    <p>lorem@ipsum.com</p>
+                </div>
+                <div class="information">
+                    <img src="{% static 'images/icons_contact/calling_phone.png'%}" class="icon" alt=""/>
+                    <p>+998 94-212-12-00</p>
+                </div>
+            </div>
+
+            <div class="social-media">
+                <p>Connect with us :</p>
+                <div class="social-icons">
+                    <a href="#">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+
+            <form action="index.html" autocomplete="off">
+                <h3 class="title_master">Contact us</h3>
+                <div class="input-container">
+                    <input type="text" name="name" class="input_master"/>
+                    <label for="">Username</label>
+                    <span>Username</span>
+                </div>
+                <div class="input-container">
+                    <input type="email" name="email" class="input_master"/>
+                    <label for="">Email</label>
+                    <span>Email</span>
+                </div>
+                <div class="input-container">
+                    <input type="tel" name="phone" class="input_master"/>
+                    <label for="">Phone</label>
+                    <span>Phone</span>
+                </div>
+                <div class="input-container textarea">
+                    <textarea name="message" class="input_master"></textarea>
+                    <label for="">Message</label>
+                    <span>Message</span>
+                </div>
+                <input type="submit" value="Send" class="btn_master"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

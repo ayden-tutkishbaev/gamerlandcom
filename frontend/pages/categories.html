@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/category.css'%}">
+
+<div class="banner">
+    <img src="{{ bottom.category_picture.file.url }}" alt="Banner" class="banner-image">
+</div>
+
+<div class="categories-section">
+    <h2 class="categories-title">Categories</h2>
+    <div class="categories-container">
+        {% for category in categories %}
+        <div class="category"><a href="{% url 'subcategories_page' category.id %}">{{ category.headline }}</a></div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock main %}

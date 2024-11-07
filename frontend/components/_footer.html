@@ -1,0 +1,60 @@
+{% load static %}
+
+<div class="footer-top">
+    <div class="container">
+
+        <div class="footer-brand">
+            <a href="#" class="logo">
+                <img src="./assets/images/cheffood.png">
+            </a>
+
+            <p class="footer-text">
+                {{ footer.caption1 }}
+            </p>
+        </div>
+
+        <ul class="footer-list">
+
+            <li>
+                <p class="footer-link-title">Start a conversation</p>
+            </li>
+
+            {% for reference in references %}
+            <li>
+                <p class="footer-link">{{ reference.reference }}</p>
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+        <div class="social-list-box">
+
+            <p class="social-title">Follow Us On:</p>
+
+            <ul class="social-list">
+
+                {% for link in links %}
+
+                <li>
+                    <a href="{{ link.link }}" class="social-link">
+                        <ion-icon name="{{ link.title }}"></ion-icon>
+                    </a>
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="footer-bottom">
+    <div class="container">
+        <p class="copyright">
+            {{ footer.copyright }}
+        </p>
+    </div>
+</div>

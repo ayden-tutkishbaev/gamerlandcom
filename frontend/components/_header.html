@@ -1,0 +1,61 @@
+{% load static %}
+
+<div class="container">
+
+    <!--overlay-->
+    <div class="overlay" data-overlay></div>
+
+    <a href="#" class="logo">
+        <img src="">
+    </a>
+
+    <button class="nav-toggle-btn" data-nav-toggle-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+    </button>
+
+    <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+            <li class="navbar-item">
+                <a href="#hero" class="navbar-link"></a>
+            </li>
+
+            <li class="navbar-item">
+                <a href="{% url 'home_page' %}" class="navbar-link">На главную</a>
+            </li>
+
+            <li class="navbar-item">
+                <a href="{% url 'categories_page' %}" class="navbar-link">Интервью</a>
+            </li>
+
+            <li class="navbar-item">
+                <a href="{% url 'about_us_page' %}" class="navbar-link">О нас</a>
+            </li>
+
+<!--            <li class="navbar-item">-->
+<!--                <a href="{% url 'contacts_page' %}" class="navbar-link">Контакты</a>-->
+<!--            </li>-->
+
+        </ul>
+
+        <div class="navbar-actions">
+
+            <button class="navbar-btn">
+                <ion-icon name="search-outline"></ion-icon>
+            </button>
+
+            <button class="navbar-btn">
+                <ion-icon name="log-in-outline"></ion-icon>
+            </button>
+
+
+            <button class="btn">
+                <ion-icon name="logo-paypal"></ion-icon>
+
+                <span>Donate</span>
+            </button>
+
+        </div>
+    </nav>
+
+</div>
